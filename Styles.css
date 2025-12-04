@@ -1,0 +1,148 @@
+
+        :root {
+            --primary-color: #ff6a88; /* Section Titles */
+            --secondary-color: #ff9a8b; /* Border/Accent */
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Animation Utility */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section (Dark Space Theme) */
+        #hero {
+            /* Clean Gradient Background */
+            background: linear-gradient(135deg, #1f0b4d 0%, #000000 100%);
+            color: white;
+            padding: 100px 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Background Star Animation */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Placeholder star pattern image */
+            background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            animation: moveStars 60s linear infinite;
+            opacity: 0.8;
+            z-index: 2;
+        }
+
+        @keyframes moveStars {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
+        #hero .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Headings */
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Project Cards */
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Springy transition */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: none !important;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Skill Badge Design */
+        .skill-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 7px;
+            border-radius: 50px; /* Pill shape */
+            font-weight: 600;
+            /* Gradient background */
+            background-image: linear-gradient(to right, #ff9a8b 0%, #ff6a88 100%);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.1);
+            background-image: linear-gradient(to right, #ff6a88 0%, #ff9a8b 100%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact */
+        #contact {
+            background-color: #e9ecef;
+            padding: 60px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 25px 0;
+            font-size: 1em;
+        }
+
+        /* Active Nav Link Highlight */
+        .navbar-nav .nav-link.active-nav {
+            color: var(--secondary-color) !important;
+            font-weight: bold;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Project Images */
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            filter: brightness(0.9);
+            transition: filter 0.5s ease;
+        }
+        .project-card:hover .project-img {
+            filter: brightness(1.1);
+        }
